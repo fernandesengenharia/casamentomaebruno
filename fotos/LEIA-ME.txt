@@ -1,0 +1,62 @@
+============================================================
+  GUIA DE FOTOS — Site Maria Fernanda & Bruno
+============================================================
+
+Faça upload das suas fotos NESTA PASTA com os nomes abaixo.
+O site carrega as imagens automaticamente — sem editar código.
+
+------------------------------------------------------------
+NOMES OBRIGATÓRIOS
+------------------------------------------------------------
+
+hero.jpg         → Foto de fundo do Hero (tela inicial)
+                   Tamanho ideal: 1920 x 1080 px ou maior
+                   Dica: foto horizontal, escura ou com overlay
+
+casal.jpg        → Foto do casal (seção Nossa História)
+                   Tamanho ideal: 800 x 1000 px (retrato)
+
+fazenda.jpg      → Foto da Fazenda Vila Rica (seção Hospedagem)
+                   Tamanho ideal: 1200 x 900 px ou maior
+
+dresscode-1.jpg  → Foto principal de referência do Dress Code
+                   Tamanho ideal: 600 x 800 px (retrato)
+
+dresscode-2.jpg  → Foto pequena de referência (esquerda)
+                   Tamanho ideal: 400 x 400 px (quadrada)
+
+dresscode-3.jpg  → Foto pequena de referência (direita)
+                   Tamanho ideal: 400 x 400 px (quadrada)
+
+galeria-1.jpg    → 1ª foto da galeria
+galeria-2.jpg    → 2ª foto da galeria
+galeria-3.jpg    → 3ª foto da galeria
+galeria-4.jpg    → 4ª foto da galeria
+galeria-5.jpg    → 5ª foto da galeria
+galeria-6.jpg    → 6ª foto da galeria
+galeria-7.jpg    → 7ª foto da galeria
+galeria-8.jpg    → 8ª foto da galeria
+
+------------------------------------------------------------
+FORMATOS ACEITOS
+------------------------------------------------------------
+.jpg ou .jpeg    ← recomendado (menor tamanho de arquivo)
+.png             ← aceito (arquivo maior)
+.webp            ← aceito (ótima qualidade e tamanho)
+
+------------------------------------------------------------
+TAMANHO MÁXIMO RECOMENDADO
+------------------------------------------------------------
+Cada foto: até 2 MB
+Fotos muito grandes deixam o site lento.
+Use https://squoosh.app para comprimir antes de fazer upload.
+
+------------------------------------------------------------
+IMPORTANTE
+------------------------------------------------------------
+- Use exatamente os nomes acima (letras minúsculas, sem espaço)
+- Se uma foto não for enviada, aparece o fundo escuro no lugar
+- Você pode enviar as fotos aos poucos, uma de cada vez
+- Não precisa editar nenhum arquivo HTML
+
+============================================================

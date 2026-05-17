@@ -246,6 +246,7 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 72px; /* empurra centralização para baixo da nav fixa */
 }
 
 .hero-bg {
@@ -267,7 +268,7 @@ a   { color: inherit; text-decoration: none; }
   position: relative; z-index: 2;
   text-align: center;
   color: var(--cream);
-  padding: 80px 2rem 1rem;
+  padding: 1rem 2rem;
   width: 100%;
   max-width: 1000px;
 }
@@ -2104,6 +2105,39 @@ a   { color: inherit; text-decoration: none; }
   if (closeX)  closeX.addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ── Auto-carregamento de fotos da pasta /fotos/ ──────────
+     Basta fazer upload com os nomes abaixo.
+     Se a foto não existir, o degradê escuro aparece no lugar.
+  ─────────────────────────────────────────────────────────── */
+  const FOTOS = [
+    { sel: '#heroBg',                              src: 'fotos/hero.jpg' },
+    { sel: '.historia-photo',                      src: 'fotos/casal.jpg' },
+    { sel: '.hosp-photo',                          src: 'fotos/fazenda.jpg' },
+    { sel: '.dc-photo-tall',                       src: 'fotos/dresscode-1.jpg' },
+    { sel: '.dc-photo-row .dc-photo-sm:nth-child(1)', src: 'fotos/dresscode-2.jpg' },
+    { sel: '.dc-photo-row .dc-photo-sm:nth-child(2)', src: 'fotos/dresscode-3.jpg' },
+    { sel: '.gallery-item:nth-child(1) .gallery-bg',  src: 'fotos/galeria-1.jpg' },
+    { sel: '.gallery-item:nth-child(2) .gallery-bg',  src: 'fotos/galeria-2.jpg' },
+    { sel: '.gallery-item:nth-child(3) .gallery-bg',  src: 'fotos/galeria-3.jpg' },
+    { sel: '.gallery-item:nth-child(4) .gallery-bg',  src: 'fotos/galeria-4.jpg' },
+    { sel: '.gallery-item:nth-child(5) .gallery-bg',  src: 'fotos/galeria-5.jpg' },
+    { sel: '.gallery-item:nth-child(6) .gallery-bg',  src: 'fotos/galeria-6.jpg' },
+    { sel: '.gallery-item:nth-child(7) .gallery-bg',  src: 'fotos/galeria-7.jpg' },
+    { sel: '.gallery-item:nth-child(8) .gallery-bg',  src: 'fotos/galeria-8.jpg' },
+  ];
+  FOTOS.forEach(({ sel, src }) => {
+    const img = new Image();
+    img.onload = () => {
+      const el = document.querySelector(sel);
+      if (el) {
+        el.style.backgroundImage = `url('${src}')`;
+        el.style.backgroundSize  = 'cover';
+        el.style.backgroundPosition = 'center center';
+      }
+    };
+    img.src = src;
+  });
 
   /* ── Smooth scroll for anchor links ────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
