@@ -1019,28 +1019,37 @@ a   { color: inherit; text-decoration: none; }
 }
 .dc-desc {
   font-size: 0.86rem; line-height: 1.95;
-  color: var(--taupe); margin-bottom: 3rem;
+  color: var(--taupe); margin-bottom: 0;
 }
-.dc-palette-lbl {
-  font-size: 0.5rem; letter-spacing: 0.4em;
-  text-transform: uppercase; color: var(--ink);
-  margin-bottom: 1.4rem;
+.dc-desc p { margin-bottom: 0.9rem; }
+.dc-desc p:last-child { margin-bottom: 0; }
+.dc-desc strong { color: var(--ink); font-weight: 400; }
+.dc-cortejo {
+  margin-top: 2.8rem;
+  padding: 1.8rem 2rem;
+  border: 1px solid var(--gold-lt);
+  border-left: 3px solid var(--gold);
+  background: rgba(197,168,126,0.06);
 }
-.dc-swatches {
-  display: flex; gap: 0.6rem; flex-wrap: wrap;
-  margin-bottom: 3rem;
+.dc-cortejo-tag {
+  font-size: 0.46rem; letter-spacing: 0.44em;
+  text-transform: uppercase; color: var(--gold-dk);
+  margin-bottom: 0.9rem;
 }
-.dc-sw { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
-.dc-sw-color { width: 44px; height: 44px; display: block; }
-.dc-sw-name {
-  font-size: 0.42rem; letter-spacing: 0.1em;
+.dc-cortejo-desc {
+  font-size: 0.84rem; line-height: 1.85;
+  color: var(--taupe); margin-bottom: 1.4rem;
+}
+.dc-cortejo-swatch {
+  display: flex; align-items: center; gap: 0.9rem;
+}
+.dc-cortejo-swatch-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  flex-shrink: 0; border: 1px solid var(--gold-lt);
+}
+.dc-cortejo-swatch-name {
+  font-size: 0.46rem; letter-spacing: 0.28em;
   text-transform: uppercase; color: var(--taupe);
-  white-space: nowrap;
-}
-.dc-soon {
-  font-size: 0.72rem; color: var(--taupe);
-  line-height: 1.85; padding-top: 1.5rem;
-  border-top: 1px solid var(--gold-lt);
 }
 .dc-visual {}
 .dc-photo-tall {
@@ -1793,48 +1802,20 @@ a   { color: inherit; text-decoration: none; }
           Vista-se<br>
           <em>para o momento</em>
         </h2>
-        <p class="dc-desc reveal d2">
-          Queremos que você se sinta elegante, confortável e parte desse
-          cenário tão especial. O dress code será definido e comunicado
-          em breve pelos noivos, com referências e inspirações para te
-          ajudar a montar o look perfeito para cada momento do fim de semana.
-        </p>
-
-        <div class="reveal d3">
-          <p class="dc-palette-lbl">Paleta de referência</p>
-          <div class="dc-swatches">
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#F3EBE1;"></span>
-              <span class="dc-sw-name">Off-white</span>
-            </div>
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#C5A87E;"></span>
-              <span class="dc-sw-name">Champagne</span>
-            </div>
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#8A7868;"></span>
-              <span class="dc-sw-name">Terracota</span>
-            </div>
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#6B7A5A;"></span>
-              <span class="dc-sw-name">Sage</span>
-            </div>
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#2E3A4E;"></span>
-              <span class="dc-sw-name">Navy</span>
-            </div>
-            <div class="dc-sw">
-              <span class="dc-sw-color" style="background:#18140F;"></span>
-              <span class="dc-sw-name">Espresso</span>
-            </div>
-          </div>
+        <div class="dc-desc reveal d2">
+          <p><strong>Senhoras —</strong> Traje longo.</p>
+          <p>O evento acontece em uma fazenda com grama. Recomendamos <strong>salto bloco, anabela ou mule</strong> para conforto ao caminhar. Evite salto fino.</p>
+          <p><strong>Cavalheiros —</strong> Traje passeio completo.</p>
         </div>
 
-        <p class="dc-soon reveal d4">
-          As informações completas sobre o dress code,<br>
-          incluindo referências e inspirações,<br>
-          serão compartilhadas em breve.
-        </p>
+        <div class="dc-cortejo reveal d3">
+          <p class="dc-cortejo-tag">Madrinhas &amp; Padrinhos</p>
+          <p class="dc-cortejo-desc">O cortejo terá uma paleta exclusiva.<br>A cor será comunicada diretamente às madrinhas e padrinhos.</p>
+          <div class="dc-cortejo-swatch">
+            <span class="dc-cortejo-swatch-circle" style="background: repeating-linear-gradient(45deg, var(--gold-lt) 0, var(--gold-lt) 3px, transparent 3px, transparent 8px);"></span>
+            <span class="dc-cortejo-swatch-name">Cor a ser revelada</span>
+          </div>
+        </div>
       </div>
 
       <div class="dc-visual reveal d1">
@@ -1887,21 +1868,6 @@ a   { color: inherit; text-decoration: none; }
     <div class="faq-list reveal d1">
 
       <div class="faq-item">
-        <button class="faq-btn">Como funciona a hospedagem na Fazenda Vila Rica?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>A hospedagem está disponível de <strong>sexta-feira (02/10) a domingo (04/10)</strong>. O valor é de <strong>R$ 1.550,00 por pessoa</strong> e inclui enxoval completo (cama e banho), todas as refeições do fim de semana e estacionamento. Check-in na sexta às 14h, check-out no domingo às 13h.</p></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn">Crianças podem participar do final de semana?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>Crianças são muito bem-vindas! <strong>Crianças a partir de 3 anos</strong> são consideradas no valor integral da hospedagem (R$ 1.550,00). Para crianças menores de 3 anos, entre em contato pelo <strong>(11) 94330-4761</strong> para informações específicas.</p></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn">Quais refeições estão inclusas na hospedagem?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>A hospedagem inclui <strong>todas as refeições do final de semana</strong>: jantar de boas-vindas na sexta, café da manhã, almoço e jantar no sábado, e brunch de despedida no domingo. A experiência foi pensada para que você se concentre apenas em estar presente.</p></div></div>
-      </div>
-
-      <div class="faq-item">
         <button class="faq-btn">Qual o aeroporto mais próximo?<span class="faq-icon">+</span></button>
         <div class="faq-answer"><div class="faq-inner"><p>O mais próximo é o <strong>Aeroporto Internacional de Viracopos (VCP)</strong>, em Campinas-SP, a aproximadamente <strong>45 km</strong> da fazenda (35–50 min de carro). O Aeroporto de Congonhas (CGH), em São Paulo, fica a cerca de 90 km (1h–1h30 de carro).</p></div></div>
       </div>
@@ -1919,11 +1885,6 @@ a   { color: inherit; text-decoration: none; }
       <div class="faq-item">
         <button class="faq-btn">Quando e como confirmar minha presença?<span class="faq-icon">+</span></button>
         <div class="faq-answer"><div class="faq-inner"><p>A confirmação de presença estará disponível neste site em breve. Para a <strong>hospedagem na fazenda</strong>, a confirmação e o pagamento devem ser realizados até <strong>16 de maio de 2026</strong> — entre em contato pelo <strong>(11) 94330-4761</strong>.</p></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-btn">Posso participar apenas da cerimônia, sem me hospedar?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>Sim, é possível participar apenas da cerimônia e recepção no sábado sem se hospedar. Para organização e mais informações, entre em contato pelo <strong>(11) 94330-4761</strong>.</p></div></div>
       </div>
 
       <div class="faq-item">
