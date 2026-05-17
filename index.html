@@ -97,16 +97,16 @@ a   { color: inherit; text-decoration: none; }
 .loader-inner { text-align: center; }
 
 .loader-monogram {
-  font-family: var(--serif);
-  font-size: 3rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--gold);
-  letter-spacing: 0.08em;
   display: block;
+  line-height: 0;
   opacity: 0;
   transform: translateY(8px);
   animation: loaderIn 0.9s var(--ease-luxury) 0.1s forwards;
+}
+.loader-monogram img {
+  height: 88px;
+  width: auto;
+  filter: brightness(0) invert(1) sepia(0.28) brightness(0.96);
 }
 .loader-line {
   display: block;
@@ -145,14 +145,24 @@ a   { color: inherit; text-decoration: none; }
   box-shadow: 0 1px 0 rgba(24,20,15,0.07);
 }
 .nav-logo {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  color: var(--cream);
-  transition: color 0.4s var(--ease-luxury);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
 }
-.nav.scrolled .nav-logo { color: var(--ink); }
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: filter 0.5s var(--ease-luxury);
+  /* Over dark hero: convert to warm cream */
+  filter: brightness(0) invert(1) sepia(0.28) brightness(0.96);
+}
+.nav.scrolled .nav-logo-img {
+  /* Over cream nav: show original gold, multiply removes white bg */
+  filter: none;
+  mix-blend-mode: multiply;
+}
 
 .nav-links { display: flex; gap: 2.8rem; list-style: none; }
 .nav-links a {
@@ -1207,12 +1217,14 @@ a   { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .footer-monogram {
-  font-family: var(--serif);
-  font-size: clamp(4.5rem, 10vw, 9rem);
-  font-weight: 300; font-style: italic;
-  color: var(--gold); line-height: 1;
   margin-bottom: 2.5rem;
-  letter-spacing: -0.01em;
+  line-height: 0;
+}
+.footer-monogram img {
+  height: clamp(80px, 14vw, 160px);
+  width: auto;
+  /* Dark footer: convert to warm cream */
+  filter: brightness(0) invert(1) sepia(0.28) brightness(0.96);
 }
 .footer-date {
   font-size: 0.54rem; letter-spacing: 0.48em;
@@ -1421,14 +1433,16 @@ a   { color: inherit; text-decoration: none; }
 <!-- ─── LOADER ──────────────────────────────────────────────── -->
 <div id="loader">
   <div class="loader-inner">
-    <span class="loader-monogram">M & B</span>
+    <span class="loader-monogram"><img src="fotos/monograma.png" alt="M & B"></span>
     <span class="loader-line"></span>
   </div>
 </div>
 
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav class="nav" id="nav">
-  <a href="#hero" class="nav-logo">M & B</a>
+  <a href="#hero" class="nav-logo">
+    <img src="fotos/monograma.png" alt="M & B" class="nav-logo-img">
+  </a>
   <ul class="nav-links">
     <li><a href="#info">Cerimônia</a></li>
     <li><a href="#hospedagem">Hospedagem</a></li>
@@ -1978,7 +1992,9 @@ a   { color: inherit; text-decoration: none; }
 ════════════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container-sm">
-    <p class="footer-monogram reveal">M & B</p>
+    <p class="footer-monogram reveal">
+      <img src="fotos/monograma.png" alt="M & B">
+    </p>
     <p class="footer-date reveal d1">03 de Outubro de 2026</p>
     <p class="footer-place reveal d2">Fazenda Vila Rica · Itatiba · São Paulo</p>
     <p class="footer-phrase reveal d3">Será inesquecível.</p>
