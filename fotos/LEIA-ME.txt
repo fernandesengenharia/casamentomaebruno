@@ -2,8 +2,27 @@
   GUIA DE FOTOS — Site Maria Fernanda & Bruno
 ============================================================
 
-Faça upload das suas fotos NESTA PASTA com os nomes abaixo.
-O site carrega as imagens automaticamente — sem editar código.
+IMPORTANTE: ONDE FAZER O UPLOAD
+------------------------------------------------------------
+1. Acesse o repositório no GitHub:
+   github.com/fernandesengenharia/casamentomaebruno
+
+2. Clique na pasta "fotos" (estará na raiz do projeto)
+
+3. ANTES de enviar, verifique qual branch está selecionado
+   no canto superior esquerdo (onde fica o seletor de branch).
+   Deve aparecer: claude/wedding-website-design-Z5dtk
+
+4. Se estiver em outro branch, clique no seletor e escolha:
+   claude/wedding-website-design-Z5dtk
+
+5. Dentro da pasta "fotos", clique em "Add file" → "Upload files"
+
+6. Arraste seus arquivos com os nomes corretos (veja abaixo)
+
+7. Clique em "Commit changes"
+
+O site atualiza automaticamente em ~1 minuto após o commit.
 
 ------------------------------------------------------------
 NOMES OBRIGATÓRIOS
@@ -52,11 +71,14 @@ Fotos muito grandes deixam o site lento.
 Use https://squoosh.app para comprimir antes de fazer upload.
 
 ------------------------------------------------------------
-IMPORTANTE
+SE O FUNDO NÃO APARECER APÓS O UPLOAD
 ------------------------------------------------------------
-- Use exatamente os nomes acima (letras minúsculas, sem espaço)
-- Se uma foto não for enviada, aparece o fundo escuro no lugar
-- Você pode enviar as fotos aos poucos, uma de cada vez
-- Não precisa editar nenhum arquivo HTML
+- Verifique se o arquivo se chama exatamente "hero.jpg"
+  (letras minúsculas, sem espaços, sem acentos)
+- Verifique se o upload foi feito no branch correto:
+  claude/wedding-website-design-Z5dtk
+- Aguarde 1 a 2 minutos e recarregue o site
+- Use Ctrl+Shift+R (ou Cmd+Shift+R no Mac) para forçar
+  atualização do cache do navegador
 
 ============================================================

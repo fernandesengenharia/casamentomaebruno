@@ -251,9 +251,8 @@ a   { color: inherit; text-decoration: none; }
 .hero-bg {
   position: absolute; inset: 0;
   will-change: transform;
-  /* Cor base escura — aparece enquanto a foto carrega */
   background-color: #1E140D;
-  /* Defaults para quando o JS aplicar a foto */
+  background-image: url('fotos/hero.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -280,8 +279,20 @@ a   { color: inherit; text-decoration: none; }
 /* Espaçador invisível que empurra os nomes para baixo da nav sem
    deslocar o centro vertical da seção */
 .hero-nav-spacer {
-  height: 120px;
+  height: clamp(52px, 7svh, 80px);
   pointer-events: none;
+}
+
+/* Telas curtas: comprime margens para o botão não ser cortado */
+@media (max-height: 820px) {
+  .hero-rule-wrap { margin: 1.4rem 0; }
+  .hero-countdown  { margin-top: 2rem; }
+  .hero-cta        { margin-top: 2rem; }
+}
+@media (max-height: 700px) {
+  .hero-rule-wrap { margin: 1rem 0; }
+  .hero-countdown  { margin-top: 1.2rem; }
+  .hero-cta        { margin-top: 1.2rem; }
 }
 
 .hero-eyebrow {
@@ -585,8 +596,9 @@ a   { color: inherit; text-decoration: none; }
   aspect-ratio: 4/5;
   position: relative;
   overflow: hidden;
-  /* Substituir por: background-image: url('foto-casal.jpg'); */
-  background: linear-gradient(155deg, #3A2518 0%, #5E3E2A 35%, #806050 65%, #A88A78 100%);
+  background-image: url('fotos/casal.jpg'), linear-gradient(155deg, #3A2518 0%, #5E3E2A 35%, #806050 65%, #A88A78 100%);
+  background-size: cover, cover;
+  background-position: center center, center center;
 }
 .historia-photo::after {
   content: '';
@@ -789,7 +801,9 @@ a   { color: inherit; text-decoration: none; }
      background-image: url('fazenda.jpg');
      background-size: cover;
      background-position: center; */
-  background: linear-gradient(145deg, #2C1E14 0%, #4A3220 30%, #6E5040 62%, #9A7868 85%, #BEA090 100%);
+  background-image: url('fotos/fazenda.jpg'), linear-gradient(145deg, #2C1E14 0%, #4A3220 30%, #6E5040 62%, #9A7868 85%, #BEA090 100%);
+  background-size: cover, cover;
+  background-position: center center, center center;
 }
 .hosp-photo::after {
   content: '';
@@ -1020,8 +1034,9 @@ a   { color: inherit; text-decoration: none; }
   aspect-ratio: 3/4;
   overflow: hidden;
   margin-bottom: 1.2rem;
-  /* Substituir por foto real de referência */
-  background: linear-gradient(155deg, #2E2018 0%, #4A3424 40%, #7A5E48 70%, #A8907A 100%);
+  background-image: url('fotos/dresscode-1.jpg'), linear-gradient(155deg, #2E2018 0%, #4A3424 40%, #7A5E48 70%, #A8907A 100%);
+  background-size: cover, cover;
+  background-position: center center, center center;
   display: flex; align-items: center; justify-content: center;
 }
 .dc-photo-row {
@@ -1032,8 +1047,8 @@ a   { color: inherit; text-decoration: none; }
   overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
-.dc-photo-sm:nth-child(1) { background: linear-gradient(135deg, #3A2618, #7A5C45); }
-.dc-photo-sm:nth-child(2) { background: linear-gradient(135deg, #4A3826, #98806E); }
+.dc-photo-sm:nth-child(1) { background-image: url('fotos/dresscode-2.jpg'), linear-gradient(135deg, #3A2618, #7A5C45); background-size: cover, cover; background-position: center, center; }
+.dc-photo-sm:nth-child(2) { background-image: url('fotos/dresscode-3.jpg'), linear-gradient(135deg, #4A3826, #98806E); background-size: cover, cover; background-position: center, center; }
 .dc-ph-txt {
   font-size: 0.48rem; letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -1102,14 +1117,14 @@ a   { color: inherit; text-decoration: none; }
 }
 .gallery-item:hover .gallery-bg { transform: scale(1.04); }
 
-.gallery-item:nth-child(1) .gallery-bg { background: linear-gradient(145deg,#2A1E14,#6B4D35); }
-.gallery-item:nth-child(2) .gallery-bg { background: linear-gradient(145deg,#1E2618,#4A5E3E); }
-.gallery-item:nth-child(3) .gallery-bg { background: linear-gradient(145deg,#1C1814,#4A3525); }
-.gallery-item:nth-child(4) .gallery-bg { background: linear-gradient(145deg,#2E1E1E,#7A4848); }
-.gallery-item:nth-child(5) .gallery-bg { background: linear-gradient(145deg,#1C1C28,#484868); }
-.gallery-item:nth-child(6) .gallery-bg { background: linear-gradient(145deg,#1A1C14,#4A5038); }
-.gallery-item:nth-child(7) .gallery-bg { background: linear-gradient(145deg,#2C1C14,#806050); }
-.gallery-item:nth-child(8) .gallery-bg { background: linear-gradient(145deg,#1C1814,#5A4838); }
+.gallery-item:nth-child(1) .gallery-bg { background-image: url('fotos/galeria-1.jpg'), linear-gradient(145deg,#2A1E14,#6B4D35); background-size: cover; background-position: center; }
+.gallery-item:nth-child(2) .gallery-bg { background-image: url('fotos/galeria-2.jpg'), linear-gradient(145deg,#1E2618,#4A5E3E); background-size: cover; background-position: center; }
+.gallery-item:nth-child(3) .gallery-bg { background-image: url('fotos/galeria-3.jpg'), linear-gradient(145deg,#1C1814,#4A3525); background-size: cover; background-position: center; }
+.gallery-item:nth-child(4) .gallery-bg { background-image: url('fotos/galeria-4.jpg'), linear-gradient(145deg,#2E1E1E,#7A4848); background-size: cover; background-position: center; }
+.gallery-item:nth-child(5) .gallery-bg { background-image: url('fotos/galeria-5.jpg'), linear-gradient(145deg,#1C1C28,#484868); background-size: cover; background-position: center; }
+.gallery-item:nth-child(6) .gallery-bg { background-image: url('fotos/galeria-6.jpg'), linear-gradient(145deg,#1A1C14,#4A5038); background-size: cover; background-position: center; }
+.gallery-item:nth-child(7) .gallery-bg { background-image: url('fotos/galeria-7.jpg'), linear-gradient(145deg,#2C1C14,#806050); background-size: cover; background-position: center; }
+.gallery-item:nth-child(8) .gallery-bg { background-image: url('fotos/galeria-8.jpg'), linear-gradient(145deg,#1C1814,#5A4838); background-size: cover; background-position: center; }
 
 .gallery-hover {
   position: absolute; inset: 0;
@@ -2112,38 +2127,7 @@ a   { color: inherit; text-decoration: none; }
   });
 
 
-  /* ── Auto-carregamento de fotos da pasta /fotos/ ──────────
-     Basta fazer upload com os nomes abaixo.
-     Se a foto não existir, o degradê escuro aparece no lugar.
-  ─────────────────────────────────────────────────────────── */
-  const FOTOS = [
-    { sel: '#heroBg',                              src: 'fotos/hero.jpg' },
-    { sel: '.historia-photo',                      src: 'fotos/casal.jpg' },
-    { sel: '.hosp-photo',                          src: 'fotos/fazenda.jpg' },
-    { sel: '.dc-photo-tall',                       src: 'fotos/dresscode-1.jpg' },
-    { sel: '.dc-photo-row .dc-photo-sm:nth-child(1)', src: 'fotos/dresscode-2.jpg' },
-    { sel: '.dc-photo-row .dc-photo-sm:nth-child(2)', src: 'fotos/dresscode-3.jpg' },
-    { sel: '.gallery-item:nth-child(1) .gallery-bg',  src: 'fotos/galeria-1.jpg' },
-    { sel: '.gallery-item:nth-child(2) .gallery-bg',  src: 'fotos/galeria-2.jpg' },
-    { sel: '.gallery-item:nth-child(3) .gallery-bg',  src: 'fotos/galeria-3.jpg' },
-    { sel: '.gallery-item:nth-child(4) .gallery-bg',  src: 'fotos/galeria-4.jpg' },
-    { sel: '.gallery-item:nth-child(5) .gallery-bg',  src: 'fotos/galeria-5.jpg' },
-    { sel: '.gallery-item:nth-child(6) .gallery-bg',  src: 'fotos/galeria-6.jpg' },
-    { sel: '.gallery-item:nth-child(7) .gallery-bg',  src: 'fotos/galeria-7.jpg' },
-    { sel: '.gallery-item:nth-child(8) .gallery-bg',  src: 'fotos/galeria-8.jpg' },
-  ];
-  FOTOS.forEach(({ sel, src }) => {
-    const img = new Image();
-    img.onload = () => {
-      const el = document.querySelector(sel);
-      if (el) {
-        el.style.backgroundImage = `url('${src}')`;
-        el.style.backgroundSize  = 'cover';
-        el.style.backgroundPosition = 'center center';
-      }
-    };
-    img.src = src;
-  });
+  /* fotos carregam via CSS background-image diretamente */
 
   /* ── Smooth scroll for anchor links ────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
