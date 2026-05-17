@@ -246,7 +246,7 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 72px; /* empurra centralização para baixo da nav fixa */
+  padding-top: 110px; /* empurra centralização para baixo da nav fixa */
 }
 
 .hero-bg {
@@ -297,7 +297,7 @@ a   { color: inherit; text-decoration: none; }
 }
 .hero-name-first em {
   font-style: italic;
-  color: var(--gold-lt);
+  color: var(--cream);
 }
 .hero-amp {
   display: block;
@@ -334,7 +334,7 @@ a   { color: inherit; text-decoration: none; }
   font-size: 0.58rem;
   letter-spacing: 0.36em;
   text-transform: uppercase;
-  color: rgba(250,248,244,0.38);
+  color: var(--gold);
   opacity: 0;
   animation: heroUp 1.1s var(--ease-luxury) 1.3s forwards;
 }
@@ -364,7 +364,7 @@ a   { color: inherit; text-decoration: none; }
   font-size: 0.46rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: rgba(250,248,244,0.7);
   margin-top: 0.5rem;
   display: block;
 }
@@ -1471,12 +1471,15 @@ a   { color: inherit; text-decoration: none; }
     </div>
 
     <div class="hero-cta">
-      <button class="btn btn-ghost-lt" id="rsvpTrigger">Confirmar Presença</button>
+      <a class="btn btn-ghost-lt"
+         href="https://wa.me/5511943304761?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82"
+         target="_blank" rel="noopener">
+        Confirmar Presença
+      </a>
     </div>
   </div>
 
   <div class="hero-scroll" aria-hidden="true">
-    <span class="scroll-txt">Scroll</span>
     <div class="scroll-bar"></div>
   </div>
 </section>
@@ -2093,18 +2096,6 @@ a   { color: inherit; text-decoration: none; }
     });
   });
 
-  /* ── RSVP modal ────────────────────────────────────────── */
-  const modal   = document.getElementById('rsvpModal');
-  const trigger = document.getElementById('rsvpTrigger');
-  const closeX  = document.getElementById('modalX');
-
-  const openModal  = () => { modal.classList.add('open'); document.body.style.overflow = 'hidden'; };
-  const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
-
-  if (trigger) trigger.addEventListener('click', openModal);
-  if (closeX)  closeX.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
   /* ── Auto-carregamento de fotos da pasta /fotos/ ──────────
      Basta fazer upload com os nomes abaixo.
