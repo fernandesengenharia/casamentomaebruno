@@ -926,6 +926,41 @@ a   { color: inherit; text-decoration: none; }
 }
 .hosp-tel:hover { color: var(--gold); }
 
+.hotels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.hotel-card {
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--gold-lt);
+  border-left: 3px solid var(--gold);
+  background: rgba(255,255,255,0.45);
+}
+.hotel-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.01em;
+}
+.hotel-addr {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--taupe);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.hotel-dist {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    AEROPORTOS
 ═══════════════════════════════════════════════════════════════ */
@@ -1397,9 +1432,7 @@ a   { color: inherit; text-decoration: none; }
   /* hosp */
   .hosp-photo { min-height: 260px; }
   .hosp-content { padding: 3rem 1.5rem; }
-  .hosp-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
-  .price-box { padding: 1.8rem 2rem; }
-  .price-val { font-size: 2rem; }
+  .hotels-grid { grid-template-columns: 1fr; }
 
   /* airport card */
   .airport-card { padding: 2.5rem 2rem; }
@@ -1658,30 +1691,10 @@ a   { color: inherit; text-decoration: none; }
           <p class="sched-day-date">04 / 10 / 2026</p>
           <ul class="sched-events">
             <li><span class="ev-time">Manhã</span><span class="ev-name">Brunch de despedida</span></li>
-            <li><span class="ev-time">13h</span><span class="ev-name">Check-out</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="checkin-strip reveal d3">
-        <div class="checkin-item">
-          <p class="checkin-lbl">Check-in</p>
-          <p class="checkin-val">Sexta às 14h</p>
-          <p class="checkin-sub">02 de outubro de 2026</p>
-        </div>
-        <div class="checkin-divider" aria-hidden="true"></div>
-        <div class="checkin-item">
-          <p class="checkin-lbl">Check-out</p>
-          <p class="checkin-val">Domingo às 13h</p>
-          <p class="checkin-sub">04 de outubro de 2026</p>
-        </div>
-        <div class="checkin-divider" aria-hidden="true"></div>
-        <div class="checkin-item">
-          <p class="checkin-lbl">Wedding Weekend</p>
-          <p class="checkin-val">3 dias</p>
-          <p class="checkin-sub">Uma experiência completa</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1693,7 +1706,7 @@ a   { color: inherit; text-decoration: none; }
 <section class="sec-hospedagem" id="hospedagem">
   <div class="hosp-head">
     <span class="sec-tag reveal">Hospedagem</span>
-    <h2 class="sec-title reveal d1">Fazenda <em>Vila Rica</em></h2>
+    <h2 class="sec-title reveal d1">Onde se <em>hospedar</em></h2>
     <span class="rule-draw reveal d2"></span>
   </div>
 
@@ -1706,40 +1719,38 @@ a   { color: inherit; text-decoration: none; }
     </div>
 
     <div class="hosp-content">
-      <p class="hosp-eyebrow">Fazenda Vila Rica · Itatiba-SP</p>
+      <p class="hosp-eyebrow">Itatiba · São Paulo</p>
       <h3 class="hosp-title">
-        Viva o fim de semana<br>
-        <em>completo conosco</em>
+        Hospedagens<br>
+        <em>recomendadas</em>
       </h3>
       <p class="hosp-desc">
-        Para os convidados que desejarem viver o final de semana completo
-        conosco, disponibilizamos hospedagem na Fazenda Vila Rica, de
-        sexta a domingo. Uma experiência íntima, com tudo organizado para
-        que você possa estar presente em cada momento.
+        Separamos algumas opções de hospedagem próximas à Fazenda Vila Rica
+        para que você e sua família possam curtir o fim de semana com
+        toda a tranquilidade.
       </p>
 
-      <p class="hosp-includes-lbl">A hospedagem inclui</p>
-      <ul class="hosp-includes">
-        <li>Enxoval completo (cama e banho)</li>
-        <li>Refeições do final de semana</li>
-        <li>Estacionamento</li>
-      </ul>
-
-      <div class="price-box">
-        <p class="price-lbl">Valor por pessoa</p>
-        <p class="price-val">R$ 1.550,00</p>
-        <p class="price-note">
-          Crianças a partir de 3 anos são consideradas
-          no valor integral da hospedagem.
-        </p>
-      </div>
-
-      <div class="hosp-footer">
-        <div class="hosp-deadline">
-          <p>Confirmação e pagamento até</p>
-          <p><strong>16 de maio de 2026</strong></p>
+      <div class="hotels-grid">
+        <div class="hotel-card">
+          <p class="hotel-name">Orion Hotel</p>
+          <p class="hotel-addr">Rua Dr. Jorge Tibiriçá, Itatiba – SP</p>
+          <p class="hotel-dist">≈ 10 min até a fazenda</p>
         </div>
-        <a href="tel:+5511943304761" class="hosp-tel">(11) 94330-4761</a>
+        <div class="hotel-card">
+          <p class="hotel-name">Ibis Itatiba</p>
+          <p class="hotel-addr">Av. dos Expedicionários Brasileiros, Itatiba – SP</p>
+          <p class="hotel-dist">≈ 10–15 min até a fazenda</p>
+        </div>
+        <div class="hotel-card">
+          <p class="hotel-name">Lazuli Hotel</p>
+          <p class="hotel-addr">Av. dos Expedicionários Brasileiros, Itatiba – SP</p>
+          <p class="hotel-dist">≈ 10–15 min até a fazenda</p>
+        </div>
+        <div class="hotel-card">
+          <p class="hotel-name">Hotel Colonial Itatiba</p>
+          <p class="hotel-addr">Av. 29 de Abril, Itatiba – SP</p>
+          <p class="hotel-dist">≈ 10–15 min até a fazenda</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1803,8 +1814,8 @@ a   { color: inherit; text-decoration: none; }
           <em>para o momento</em>
         </h2>
         <div class="dc-desc reveal d2">
-          <p><strong>Senhoras —</strong> Traje longo.</p>
-          <p>O evento acontece em uma fazenda com grama. Recomendamos <strong>salto bloco, anabela ou mule</strong> para conforto ao caminhar. Evite salto fino.</p>
+          <p>Traje social elegante.</p>
+          <p>Como a celebração acontecerá em uma fazenda, sugerimos o uso de <strong>salto bloco, anabela ou mule</strong> — modelos mais confortáveis para os ambientes externos com grama. Evite salto fino.</p>
           <p><strong>Cavalheiros —</strong> Traje passeio completo.</p>
         </div>
 
