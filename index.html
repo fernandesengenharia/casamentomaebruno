@@ -243,8 +243,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ═══════════════════════════════════════════════════════════════
    HERO
-   Substitua .hero-bg pelo atributo style com sua foto real:
-   style="background-image:url('foto.jpg');background-size:cover;background-position:center;"
 ═══════════════════════════════════════════════════════════════ */
 .hero {
   height: 100svh;
@@ -266,7 +264,6 @@ a   { color: inherit; text-decoration: none; }
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* Overlay sobre a foto — deixa os textos legíveis */
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
@@ -285,14 +282,11 @@ a   { color: inherit; text-decoration: none; }
   width: 100%;
   max-width: 1000px;
 }
-/* Espaçador invisível que empurra os nomes para baixo da nav sem
-   deslocar o centro vertical da seção */
 .hero-nav-spacer {
   height: clamp(52px, 7svh, 80px);
   pointer-events: none;
 }
 
-/* Telas curtas: comprime margens para o botão não ser cortado */
 @media (max-height: 820px) {
   .hero-rule-wrap { margin: 1.4rem 0; }
   .hero-countdown  { margin-top: 2rem; }
@@ -349,7 +343,6 @@ a   { color: inherit; text-decoration: none; }
   text-shadow: 0 2px 28px rgba(0,0,0,0.55), 0 1px 6px rgba(0,0,0,0.35);
 }
 
-/* Linha animada sob os nomes */
 .hero-rule-wrap {
   display: flex;
   justify-content: center;
@@ -539,7 +532,6 @@ a   { color: inherit; text-decoration: none; }
 .sec-title-lt { color: var(--cream); }
 .sec-title-lt em { color: var(--gold-lt); }
 
-/* Animated rule — becomes visible when parent .reveal fires */
 .rule-draw {
   display: block;
   height: 1px;
@@ -552,7 +544,7 @@ a   { color: inherit; text-decoration: none; }
 .rule-draw-left { margin: 2rem 0 0; }
 
 /* ═══════════════════════════════════════════════════════════════
-   REVEAL SYSTEM — cinematográfico
+   REVEAL SYSTEM
 ═══════════════════════════════════════════════════════════════ */
 .reveal {
   opacity: 0;
@@ -796,8 +788,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HOSPEDAGEM — full-bleed editorial
-   Foto: substituir .hosp-photo background por url() real
+   HOSPEDAGEM
 ═══════════════════════════════════════════════════════════════ */
 .sec-hospedagem {
   background: var(--cream-2);
@@ -820,10 +811,6 @@ a   { color: inherit; text-decoration: none; }
   position: relative;
   overflow: hidden;
   min-height: 600px;
-  /* Substituir por foto real da fazenda:
-     background-image: url('fazenda.jpg');
-     background-size: cover;
-     background-position: center; */
   background-image: url('fotos/fazenda.jpg'), linear-gradient(145deg, #2C1E14 0%, #4A3220 30%, #6E5040 62%, #9A7868 85%, #BEA090 100%);
   background-size: cover, cover;
   background-position: center center, center center;
@@ -1038,8 +1025,7 @@ a   { color: inherit; text-decoration: none; }
 .airport-note-txt strong { color: var(--ink); font-weight: 400; }
 
 /* ═══════════════════════════════════════════════════════════════
-   DRESS CODE — editorial
-   Adicionar fotos reais de referência nas áreas indicadas
+   DRESS CODE
 ═══════════════════════════════════════════════════════════════ */
 .dresscode-layout {
   display: grid;
@@ -1123,8 +1109,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PRESENTES — stripped down, emocional
-   Substituir href="#" pelo link real da lista
+   PRESENTES
 ═══════════════════════════════════════════════════════════════ */
 .sec-presentes {
   background: var(--ink);
@@ -1164,7 +1149,6 @@ a   { color: inherit; text-decoration: none; }
 
 /* ═══════════════════════════════════════════════════════════════
    GALERIA
-   Substituir .gallery-item-bg por background-image real
 ═══════════════════════════════════════════════════════════════ */
 .gallery-grid {
   display: grid;
@@ -1249,7 +1233,7 @@ a   { color: inherit; text-decoration: none; }
 .faq-inner strong { color: var(--ink); font-weight: 400; }
 
 /* ═══════════════════════════════════════════════════════════════
-   RSVP TEASER
+   RSVP
 ═══════════════════════════════════════════════════════════════ */
 .sec-rsvp {
   background: var(--cream-2);
@@ -1265,8 +1249,33 @@ a   { color: inherit; text-decoration: none; }
 .rsvp-sub {
   font-size: 0.84rem; line-height: 1.9;
   color: var(--taupe); max-width: 500px;
-  margin: 0 auto 3.2rem;
+  margin: 0 auto 1.6rem;
 }
+.rsvp-options {
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto 2.8rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.rsvp-options li {
+  font-size: 0.84rem;
+  color: var(--taupe);
+  line-height: 1.75;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.rsvp-options li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.rsvp-link { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ═══════════════════════════════════════════════════════════════
    FOOTER
@@ -1324,7 +1333,7 @@ a   { color: inherit; text-decoration: none; }
 .modal-bg.open { opacity: 1; visibility: visible; }
 .modal-box {
   background: var(--cream);
-  max-width: 460px; width: 100%;
+  max-width: 480px; width: 100%;
   padding: 4.5rem 3.8rem;
   text-align: center;
   position: relative;
@@ -1355,9 +1364,31 @@ a   { color: inherit; text-decoration: none; }
 .modal-title em { font-style: italic; color: var(--taupe); }
 .modal-body {
   font-size: 0.84rem; line-height: 1.9;
-  color: var(--taupe); margin-bottom: 2.8rem;
+  color: var(--taupe); margin-bottom: 1.4rem;
 }
-.modal-body strong { color: var(--ink); font-weight: 400; }
+.modal-options {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.modal-options li {
+  font-size: 0.82rem;
+  color: var(--taupe);
+  line-height: 1.75;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.modal-options li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
 
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
@@ -1379,8 +1410,6 @@ a   { color: inherit; text-decoration: none; }
 
   .container { padding: 0 2.2rem; }
   .container-sm { padding: 0 2.2rem; }
-
-  /* historia */
 
   /* informações */
   .info-grid { grid-template-columns: 1fr; }
@@ -1472,6 +1501,10 @@ a   { color: inherit; text-decoration: none; }
   /* modal */
   .modal-box { padding: 3rem 1.6rem; }
   .modal-title { font-size: 1.6rem; }
+
+  /* rsvp mobile */
+  .rsvp-options { padding: 0 0.5rem; }
+  .modal-options { padding: 0; }
 }
 
 @media (max-width: 380px) {
@@ -1526,8 +1559,6 @@ a   { color: inherit; text-decoration: none; }
 
 <!-- ═══════════════════════════════════════════════════════════
      HERO
-     Para usar foto real, adicione ao .hero-bg:
-     style="background-image:url('sua-foto.jpg');background-size:cover;background-position:center center;"
 ════════════════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg"></div>
@@ -1570,7 +1601,7 @@ a   { color: inherit; text-decoration: none; }
 
     <div class="hero-cta">
       <a class="btn btn-ghost-lt"
-         href="https://wa.me/5511943304761?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82"
+         href="https://wa.me/5565999822431?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82"
          target="_blank" rel="noopener">
         Confirmar Presença
       </a>
@@ -1583,7 +1614,7 @@ a   { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INTRO — texto do PDF
+     INTRO
 ════════════════════════════════════════════════════════════ -->
 <section class="sec-intro" id="intro">
   <div class="intro-wrap reveal">
@@ -1604,7 +1635,6 @@ a   { color: inherit; text-decoration: none; }
 
 <!-- ═══════════════════════════════════════════════════════════
      NOSSA HISTÓRIA
-     Substituir foto e texto pelo relato real do casal
 ════════════════════════════════════════════════════════════ -->
 <section class="section" id="historia">
   <div class="container">
@@ -1681,8 +1711,7 @@ a   { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     HOSPEDAGEM — full-bleed editorial
-     Foto: adicionar ao .hosp-photo o atributo style com url real
+     HOSPEDAGEM
 ════════════════════════════════════════════════════════════ -->
 <section class="sec-hospedagem" id="hospedagem">
   <div class="hosp-head">
@@ -1775,15 +1804,14 @@ a   { color: inherit; text-decoration: none; }
       <div class="airport-note-bar" aria-hidden="true"></div>
       <p class="airport-note-txt">
         <strong>Informações sobre transporte</strong> serão disponibilizadas em breve.
-        Para dúvidas, entre em contato pelo <strong>(11) 94330-4761</strong>.
+        Para dúvidas, entre em contato pelo <strong>(65) 99982-2431</strong>.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     DRESS CODE — editorial
-     Substituir fotos e atualizar texto quando definido
+     DRESS CODE
 ════════════════════════════════════════════════════════════ -->
 <section class="section" id="dresscode" style="background:var(--cream-2);">
   <div class="container">
@@ -1805,7 +1833,6 @@ a   { color: inherit; text-decoration: none; }
 
 <!-- ═══════════════════════════════════════════════════════════
      PRESENTES
-     Substituir href="#" pelo link real da lista de presentes
 ════════════════════════════════════════════════════════════ -->
 <section class="sec-presentes" id="presentes">
   <div class="container-sm" style="text-align:center;">
@@ -1849,12 +1876,9 @@ a   { color: inherit; text-decoration: none; }
         <div class="faq-answer"><div class="faq-inner"><p>Sim. Os noivos contrataram serviço de van para levar e buscar os convidados no dia da cerimônia.</p></div></div>
       </div>
 
-
-      </div>
-
       <div class="faq-item">
         <button class="faq-btn">Quando e como confirmar minha presença?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>Nossa assessoria entrará em contato via WhatsApp com todos os convidados antecedendo o evento.</p></div></div>
+        <div class="faq-answer"><div class="faq-inner"><p>Escolha a forma mais conveniente: aguardar o contato da nossa assessoria, que entrará em contato com todos os convidados próximo à data do evento; ou enviar uma mensagem diretamente para <strong>(65) 99982-2431</strong>.</p></div></div>
       </div>
 
       <div class="faq-item">
@@ -1864,7 +1888,7 @@ a   { color: inherit; text-decoration: none; }
 
       <div class="faq-item">
         <button class="faq-btn">Como entrar em contato com os organizadores?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-inner"><p>Nossa assessoria entrará em contato em breve para esclarecer eventuais dúvidas.</p></div></div>
+        <div class="faq-answer"><div class="faq-inner"><p>Entre em contato pelo WhatsApp <strong>(65) 99982-2431</strong>. Será um prazer responder suas dúvidas.</p></div></div>
       </div>
 
     </div>
@@ -1872,7 +1896,7 @@ a   { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     RSVP TEASER
+     RSVP — CONFIRMAÇÃO DE PRESENÇA
 ════════════════════════════════════════════════════════════ -->
 <section class="section sec-rsvp" id="rsvp">
   <div class="container-sm">
@@ -1880,12 +1904,14 @@ a   { color: inherit; text-decoration: none; }
     <h2 class="rsvp-title reveal d1">
       Sua presença<br><em>faz toda a diferença</em>
     </h2>
-    <p class="rsvp-sub reveal d2">
-      Em breve você poderá confirmar sua presença diretamente aqui.
-      Enquanto isso, qualquer dúvida pode ser enviada pelo WhatsApp.
-    </p>
-    <div class="reveal d3">
-      <a href="https://wa.me/5511943304761" class="btn btn-ink" target="_blank" rel="noopener">
+    <p class="rsvp-sub reveal d2">Escolha a forma mais conveniente para confirmar sua presença:</p>
+    <ul class="rsvp-options reveal d3">
+      <li>Aguardar a confirmação com nossa assessoria, que entrará em contato próximo à data do evento.</li>
+      <li>Enviar uma mensagem para: <a href="https://wa.me/5565999822431?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82" target="_blank" rel="noopener" class="rsvp-link"><strong>(65) 99982-2431</strong></a>.</li>
+    </ul>
+    <div class="reveal d4">
+      <a href="https://wa.me/5565999822431?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82"
+         class="btn btn-ink" target="_blank" rel="noopener">
         Falar pelo WhatsApp
       </a>
     </div>
@@ -1915,14 +1941,14 @@ a   { color: inherit; text-decoration: none; }
   <div class="modal-box">
     <button class="modal-x" id="modalX" aria-label="Fechar">✕</button>
     <p class="modal-tag">Confirmação de Presença</p>
-    <h3 class="modal-title">Em breve,<br><em>por aqui</em></h3>
-    <p class="modal-body">
-      A confirmação de presença estará disponível neste site em breve.
-      Fique atento às atualizações.<br><br>
-      Para hospedagem na fazenda, entre em contato pelo
-      <strong>(11) 94330-4761</strong> até 16 de maio de 2026.
-    </p>
-    <a href="https://wa.me/5511943304761" class="btn btn-ink" target="_blank" rel="noopener">
+    <h3 class="modal-title">Confirme sua<br><em>presença</em></h3>
+    <p class="modal-body">Escolha a forma mais conveniente para confirmar sua presença:</p>
+    <ul class="modal-options">
+      <li>Aguardar a confirmação com nossa assessoria, que entrará em contato próximo à data do evento.</li>
+      <li>Enviar uma mensagem para: <a href="https://wa.me/5565999822431?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82" target="_blank" rel="noopener" class="rsvp-link"><strong>(65) 99982-2431</strong></a>.</li>
+    </ul>
+    <a href="https://wa.me/5565999822431?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Maria%20Fernanda%20%26%20Bruno%20em%2003%2F10%2F2026.%20%F0%9F%A5%82"
+       class="btn btn-ink" target="_blank" rel="noopener">
       Falar pelo WhatsApp
     </a>
   </div>
@@ -2046,9 +2072,6 @@ a   { color: inherit; text-decoration: none; }
       if (!isOpen) item.classList.add('open');
     });
   });
-
-
-  /* fotos carregam via CSS background-image diretamente */
 
   /* ── Smooth scroll for anchor links ────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
